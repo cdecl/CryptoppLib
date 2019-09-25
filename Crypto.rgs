@@ -1,0 +1,27 @@
+HKCR
+{
+	CryptoppLib.Crypto.1 = s 'Crypto Class'
+	{
+		CLSID = s '{599D0453-83F0-4E5C-9F99-AFFA0246B14D}'
+	}
+	CryptoppLib.Crypto = s 'Crypto Class'
+	{
+		CLSID = s '{599D0453-83F0-4E5C-9F99-AFFA0246B14D}'
+		CurVer = s 'CryptoppLib.Crypto.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {599D0453-83F0-4E5C-9F99-AFFA0246B14D} = s 'Crypto Class'
+		{
+			ProgID = s 'CryptoppLib.Crypto.1'
+			VersionIndependentProgID = s 'CryptoppLib.Crypto'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{FCEDE25E-E6BF-4BFB-BC02-7B2E7B676E35}'
+		}
+	}
+}

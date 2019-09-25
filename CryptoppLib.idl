@@ -1,0 +1,60 @@
+// CryptoppLib.idl : CryptoppLib의 IDL 소스입니다.
+//
+
+// 이 파일은 MIDL 도구에 의해 처리되어
+// 형식 라이브러리(CryptoppLib.tlb) 및 마샬링 코드가 생성됩니다.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(EE74AACE-EC42-4C15-BB56-FE1ECF47B39F),
+	dual,
+	nonextensible,
+	helpstring("ISeed 인터페이스"),
+	pointer_default(unique)
+]
+interface ISeed : IDispatch{
+	[id(1), helpstring("메서드 Encrypt")] HRESULT Encrypt([in] BSTR key, [in] BSTR text, [out,retval] VARIANT* pResult);
+	[id(2), helpstring("메서드 Decrypt")] HRESULT Decrypt([in] BSTR key, [in] BSTR text, [out,retval] VARIANT* pResult);
+};
+[
+	object,
+	uuid(6A61866F-541B-4274-9159-1E1563D81D82),
+	dual,
+	nonextensible,
+	helpstring("ICrypto 인터페이스"),
+	pointer_default(unique)
+]
+interface ICrypto : IDispatch{
+	[id(1), helpstring("메서드 Encrypt")] HRESULT Encrypt([in] BSTR name, [in] BSTR key, [in] BSTR iv, [in] BSTR text, [out,retval] VARIANT * pResult);
+	[id(2), helpstring("메서드 Decrypt")] HRESULT Decrypt([in] BSTR name, [in] BSTR key, [in] BSTR iv, [in] BSTR text, [out,retval] VARIANT * pResult);
+	[id(3), helpstring("메서드 Encrypt_HexEnc")] HRESULT Encrypt_HexEnc([in] BSTR name, [in] BSTR key, [in] BSTR iv, [in] BSTR text, [out,retval] VARIANT * pResult);
+	[id(4), helpstring("메서드 Decrypt_HexDec")] HRESULT Decrypt_HexDec([in] BSTR name, [in] BSTR key, [in] BSTR iv, [in] BSTR text, [out,retval] VARIANT * pResult);
+};
+[
+	uuid(FCEDE25E-E6BF-4BFB-BC02-7B2E7B676E35),
+	version(1.0),
+	helpstring("CryptoppLib 1.0 형식 라이브러리")
+]
+library CryptoppLibLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(9D551F85-21F0-44E8-946E-020DE85E161C),
+		helpstring("Seed Class")
+	]
+	coclass Seed
+	{
+		[default] interface ISeed;
+	};
+	[
+		uuid(599D0453-83F0-4E5C-9F99-AFFA0246B14D),
+		helpstring("Crypto Class")
+	]
+	coclass Crypto
+	{
+		[default] interface ICrypto;
+	};
+};

@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CryptoppLib", "CryptoppLib.vcproj", "{174DA4E9-B8FE-487A-89EF-1E35B98272A6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CryptoppLibPS", "CryptoppLibPS.vcproj", "{37EBC3C0-2C3C-47ED-813C-F591323CD544}"
+	ProjectSection(ProjectDependencies) = postProject
+		{174DA4E9-B8FE-487A-89EF-1E35B98272A6} = {174DA4E9-B8FE-487A-89EF-1E35B98272A6}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{174DA4E9-B8FE-487A-89EF-1E35B98272A6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{174DA4E9-B8FE-487A-89EF-1E35B98272A6}.Debug|Win32.Build.0 = Debug|Win32
+		{174DA4E9-B8FE-487A-89EF-1E35B98272A6}.Release|Win32.ActiveCfg = Release|Win32
+		{174DA4E9-B8FE-487A-89EF-1E35B98272A6}.Release|Win32.Build.0 = Release|Win32
+		{37EBC3C0-2C3C-47ED-813C-F591323CD544}.Debug|Win32.ActiveCfg = Debug|Win32
+		{37EBC3C0-2C3C-47ED-813C-F591323CD544}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

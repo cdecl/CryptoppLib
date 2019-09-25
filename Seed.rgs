@@ -1,0 +1,27 @@
+HKCR
+{
+	CryptoppLib.Seed.1 = s 'Seed Class'
+	{
+		CLSID = s '{9D551F85-21F0-44E8-946E-020DE85E161C}'
+	}
+	CryptoppLib.Seed = s 'Seed Class'
+	{
+		CLSID = s '{9D551F85-21F0-44E8-946E-020DE85E161C}'
+		CurVer = s 'CryptoppLib.Seed.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {9D551F85-21F0-44E8-946E-020DE85E161C} = s 'Seed Class'
+		{
+			ProgID = s 'CryptoppLib.Seed.1'
+			VersionIndependentProgID = s 'CryptoppLib.Seed'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{FCEDE25E-E6BF-4BFB-BC02-7B2E7B676E35}'
+		}
+	}
+}
